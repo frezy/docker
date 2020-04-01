@@ -33,4 +33,4 @@ networks:
     net:
     bridge:
       external:
-        name: nginx_proxy
+        name: nginx_proxy_net
