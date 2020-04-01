@@ -13,7 +13,6 @@ services:
        MYSQL_PASSWORD: wordpress
 
    wordpress:
-     network_mode: bridge
      image: wordpress:apache
      restart: always
      environment:
@@ -25,3 +24,7 @@ services:
 
 volumes:
     db_data:
+networks:
+    bridge:
+      external:
+        name: bridge
