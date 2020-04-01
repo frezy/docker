@@ -25,6 +25,6 @@ services:
 volumes:
     db_data:
 networks:
-    bridge:
+    default:
       external:
         name: nginx_proxy_net
