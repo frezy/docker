@@ -13,7 +13,7 @@ services:
        MYSQL_PASSWORD: wordpress
 
    wordpress:
-     network_mode: host
+     network_mode: bridge
      image: wordpress:apache
      restart: always
      environment:
