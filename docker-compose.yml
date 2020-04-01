@@ -13,7 +13,6 @@ services:
        MYSQL_PASSWORD: wordpress
 
    wordpress:
-     network_mode: bridge
      networks:
        - host
      image: wordpress:apache
