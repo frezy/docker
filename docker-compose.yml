@@ -14,7 +14,7 @@ services:
 
    wordpress:
      networks:
-       - host
+       - hostnet
      image: wordpress:apache
      restart: always
      environment:
@@ -26,3 +26,7 @@ services:
 
 volumes:
     db_data:
+networks:
+    hostnet:
+      external: true
+      name: host
