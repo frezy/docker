@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+   db:
+     image: mariadb:latest
+     volumes:
+       - db:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+    networks:
+      - net
+
+   wordpress:
+     image: wordpress:apache
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       VIRTUAL_HOST: ${VIRTUAL_HOST}
+       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
+    networks:
+      - net
+
+volumes:
+    db:
+    
+networks:
+    net:
