@@ -28,5 +28,5 @@ volumes:
     db_data:
 networks:
     host:
-      external: true
+      external:
         name: host
